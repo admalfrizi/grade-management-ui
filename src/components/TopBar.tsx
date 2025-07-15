@@ -80,7 +80,7 @@ export default function TopBar() {
           </Stack>
           {/* <ColorModeIconDropdown /> */}
           <MenuIcon aria-label="menu" onClick={toggleDrawer(true)}>
-            <MenuRoundedIcon/>
+            <MenuRoundedIcon />
           </MenuIcon>
           <SideBarMobile open={open} toggleDrawer={toggleDrawer} />
         </Stack>

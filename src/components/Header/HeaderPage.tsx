@@ -3,6 +3,8 @@
 import { Stack } from '@mui/material'
 import React from 'react'
 import Breadcrumb from './BreadCrumb'
+import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
+import MenuIcon from '../MenuIcon';
 
 interface Props {
     namePage?: string
@@ -14,7 +16,7 @@ function HeaderPage({ namePage, searchVl } : Props) {
     <Stack
       direction="row"
       sx={{
-        display: { xs: 'none', md: 'flex' },
+        display: 'flex',
         width: '100%',
         alignItems: { xs: 'flex-start', md: 'center' },
         justifyContent: 'space-between',
@@ -24,6 +26,9 @@ function HeaderPage({ namePage, searchVl } : Props) {
       spacing={2}
     >
         <Breadcrumb />
+        <MenuIcon showBadge aria-label="Open notifications">
+          <NotificationsRoundedIcon />
+        </MenuIcon>
     </Stack>
   )
 }
