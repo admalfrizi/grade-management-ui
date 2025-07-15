@@ -50,33 +50,33 @@ export default function StatCard({
   trend,
   data,
 }: StatCardProps) {
-  const theme = useTheme();
-  const daysInWeek = getDaysInMonth(4, 2024);
+  // const theme = useTheme();
+  // const daysInWeek = getDaysInMonth(4, 2024);
 
-  const trendColors = {
-    up:
-      theme.palette.mode === 'light'
-        ? theme.palette.success.main
-        : theme.palette.success.dark,
-    down:
-      theme.palette.mode === 'light'
-        ? theme.palette.error.main
-        : theme.palette.error.dark,
-    neutral:
-      theme.palette.mode === 'light'
-        ? theme.palette.grey[400]
-        : theme.palette.grey[700],
-  };
+  // const trendColors = {
+  //   up:
+  //     theme.palette.mode === 'light'
+  //       ? theme.palette.success.main
+  //       : theme.palette.success.dark,
+  //   down:
+  //     theme.palette.mode === 'light'
+  //       ? theme.palette.error.main
+  //       : theme.palette.error.dark,
+  //   neutral:
+  //     theme.palette.mode === 'light'
+  //       ? theme.palette.grey[400]
+  //       : theme.palette.grey[700],
+  // };
 
-  const labelColors = {
-    up: 'success' as const,
-    down: 'error' as const,
-    neutral: 'default' as const,
-  };
+  // const labelColors = {
+  //   up: 'success' as const,
+  //   down: 'error' as const,
+  //   neutral: 'default' as const,
+  // };
 
-  const color = labelColors[trend];
-  const chartColor = trendColors[trend];
-  const trendValues = { up: '+25%', down: '-25%', neutral: '+5%' };
+  // const color = labelColors[trend];
+  // const chartColor = trendColors[trend];
+  // const trendValues = { up: '+25%', down: '-25%', neutral: '+5%' };
 
   return (
     <Card variant="outlined" sx={{ height: '100%'}}>
@@ -96,7 +96,6 @@ export default function StatCard({
               <Typography variant="h4" component="p">
                 {value}
               </Typography>
-              <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>
             <Typography variant="caption" sx={{ color: 'text.secondary' }}>
               {interval}

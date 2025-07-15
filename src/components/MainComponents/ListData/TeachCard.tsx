@@ -11,7 +11,7 @@ export type TeachCardProps = {
 
 export default function TeachCard({nmKelas, jumlahMhs,jumlahSKS,timeFrom, timeTo} : TeachCardProps) {
     return (
-        <Card variant="outlined" sx={{ height: '100%'}}>
+        <Card variant="outlined" sx={{ height: '100%' , mb: 2}}>
             <CardContent >
                 <Typography component="h2" variant="h6" gutterBottom>
                     {nmKelas}

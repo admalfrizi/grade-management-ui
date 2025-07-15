@@ -49,6 +49,14 @@ const scheduleClass: ScheduleClass[] = [
     jumlahMhs: 15,
     timeFrom: "10.00",
     timeTo: "12.00"
+  },
+  {
+    id: 'cls-102',
+    nmKelas: 'Kelas B - Basis Data SQL',
+    jumlahSKS: 3,
+    jumlahMhs: 20,
+    timeFrom: "14.10",
+    timeTo: "16.00"
   }
 ]
 
@@ -180,8 +188,7 @@ export default function Home() {
             <TeachCard {...data} key={idx}/>
           ))
         }
-        {/* //<SessionsChart /> */}
-        <Copyright sx={{ my: 4 }} />
+
       </Box>
     </div>
   );
