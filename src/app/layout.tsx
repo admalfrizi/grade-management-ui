@@ -34,13 +34,12 @@ export default function RootLayout({
           <AppRouterCacheProvider>
            <ThemeProvider theme={theme}>
               <TopBar />
-              <Box sx={{ display: 'flex' }}>
+              <Box sx={{ display: 'flex'}}>
                 <Sidebar/>
-               
                 <Stack
                     spacing={2}
                     sx={{
-                      alignItems: 'center',
+                      width: "100%",
                       mx: 3,
                       pb: 5,
                       mt: { xs: 12, md: 0 },
@@ -49,9 +48,7 @@ export default function RootLayout({
                   <HeaderPage />
                   {children}
                 </Stack>
-                
               </Box>
-              
            </ThemeProvider>
           </AppRouterCacheProvider>
        </body>

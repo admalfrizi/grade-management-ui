@@ -102,26 +102,6 @@ export default function StatCard({
               {interval}
             </Typography>
           </Stack>
-          <Box sx={{ width: '100%', height: 50 }}>
-            <SparkLineChart
-              color={chartColor}
-              data={data}
-              area
-              showHighlight
-              showTooltip
-              xAxis={{
-                scaleType: 'band',
-                data: daysInWeek, // Use the correct property 'data' for xAxis
-              }}
-              sx={{
-                [`& .${areaElementClasses.root}`]: {
-                  fill: `url(#area-gradient-${value})`,
-                },
-              }}
-            >
-              <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
-            </SparkLineChart>
-          </Box>
         </Stack>
       </CardContent>
     </Card>
