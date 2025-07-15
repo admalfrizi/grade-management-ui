@@ -12,6 +12,7 @@ import CustomizedTreeView from "./Charts/CustomizedTreeView";
 import ChartUserByCountry from "./Charts/ChartUserByCountry";
 import PageViewsBarChart from "./Charts/PageViewsBarChart";
 import ClassCard from "./ListData/ClassCard";
+import TeachCard from "./ListData/TeachCard";
 
 const data: StatCardProps[] = [
   {
@@ -45,6 +46,17 @@ const data: StatCardProps[] = [
     ],
   },
 ];
+
+const scheduleClass: ScheduleClass[] = [
+  {
+    id: 'cls-101',
+    nmKelas: 'Kelas A - Algoritma',
+    jumlahSKS: 3,
+    jumlahMhs: 15,
+    timeFrom: "10.00",
+    timeTo: "12.00"
+  }
+]
 
 const classes: ClassRoom[] = [
   {
@@ -167,7 +179,12 @@ function GridData() {
       <Typography component="h2" variant="h6" sx={{ my: 2 }}>
         Jadwal Mengajar Anda untuk Hari Ini
       </Typography>
-      <SessionsChart />
+      {
+        scheduleClass.map((data, idx) => (
+          <TeachCard {...data} key={idx}/>
+        ))
+      }
+      {/* //<SessionsChart /> */}
       <Copyright sx={{ my: 4 }} />
     </Box>
   )

@@ -28,3 +28,12 @@ interface ClassRoom {
   students: Student[];
 }
 
+interface ScheduleClass {
+  id: string;
+  nmKelas: string;
+  jumlahSKS: number;
+  jumlahMhs: number;
+  timeFrom: string;
+  timeTo: string
+}
+

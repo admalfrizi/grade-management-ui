@@ -1,16 +1,18 @@
 import { CardContent, Stack, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 
-export type ClassCardProps = {
+export type TeachCardProps = {
     nmKelas: string
-    jmlhMhs: number
-    nmJurusan: string
+    jumlahSKS: number
+    jumlahMhs: number
+    timeFrom: string
+    timeTo: string
 }
 
-export default function ClassCard({nmKelas, jmlhMhs,nmJurusan} : ClassCardProps) {
+export default function TeachCard({nmKelas, jumlahMhs,jumlahSKS,timeFrom, timeTo} : TeachCardProps) {
     return (
         <Card variant="outlined" sx={{ height: '100%'}}>
-            <CardContent>
+            <CardContent >
                 <Typography component="h2" variant="h6" gutterBottom>
                     {nmKelas}
                 </Typography>
@@ -19,7 +21,7 @@ export default function ClassCard({nmKelas, jmlhMhs,nmJurusan} : ClassCardProps)
                     sx={{ justifyContent: 'space-between', gap: 1 }}
                 >
                     <Typography variant="subtitle2" component="p">
-                        {jmlhMhs} Mahasiswa
+                        {jumlahMhs} Mahasiswa
                     </Typography>
                 </Stack>
             </CardContent>
