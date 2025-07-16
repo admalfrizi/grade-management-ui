@@ -7,7 +7,7 @@ interface Grade {
 
 interface Chapter {
   title: string;
-  contribution: number; // % kontribusi terhadap nilai akhir
+  contribution: number;
 }
 
 interface Subject {
@@ -19,13 +19,17 @@ interface Subject {
 interface Student {
   id: string;
   name: string;
+  nim: string;
   subjects: Subject[];
 }
 
 interface ClassRoom {
-  id: string;
-  name: string;
-  students: Student[];
+  id: number;
+  nmMatkul: string;
+  nmJurusan: string;
+  semester: number;
+  jmlhBab: number;
+  jmlhMhs: number
 }
 
 interface ScheduleClass {
