@@ -73,18 +73,18 @@ export default function ClassDetail() {
             <header>
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { md: 'center' }, gap: 2, mb: 4 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Avatar variant="rounded" sx={{ bgcolor: 'info.light', width: 64, height: 64 }}>
-                        {/* A custom Figma icon would go here */}
-                        <Typography sx={{ color: 'info.main', fontWeight: 'bold' }}>UI</Typography>
-                    </Avatar>
-                    <Box>
-                        <Typography variant="h4" component="h1" fontWeight="bold">Desain Antarmuka Pengguna</Typography>
-                        <Typography color="text.secondary">Kode Kelas: IF-401 | 3 SKS | Ruang 302</Typography>
-                    </Box>
+                        <Avatar variant="rounded" sx={{ bgcolor: 'info.light', width: 64, height: 64 }}>
+                            {/* A custom Figma icon would go here */}
+                            <Typography sx={{ color: 'info.main', fontWeight: 'bold' }}>UI</Typography>
+                        </Avatar>
+                        <Box>
+                            <Typography variant="h4" component="h1" fontWeight="bold">Desain Antarmuka Pengguna</Typography>
+                            <Typography color="text.secondary">Kode Kelas: IF-401 | 3 SKS | Ruang 302</Typography>
+                        </Box>
                     </Box>
                     <Box sx={{ display: 'flex', gap: 1 }}>
-                    <Button variant="outlined" color="secondary" startIcon={<SettingsIcon />} sx={{ textTransform: 'none' }}>Pengaturan</Button>
-                    <Button variant="contained" color="primary" startIcon={<VideocamIcon />} sx={{ textTransform: 'none' }}>Mulai Kelas Online</Button>
+                        <Button variant="outlined" color="secondary" startIcon={<SettingsIcon />} sx={{ textTransform: 'none' }}>Pengaturan</Button>
+                        <Button variant="contained" color="primary" startIcon={<VideocamIcon />} sx={{ textTransform: 'none' }}>Mulai Kelas Online</Button>
                     </Box>
                 </Box>
             </header>
