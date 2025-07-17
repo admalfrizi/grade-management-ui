@@ -42,11 +42,6 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }
   },
 }));
 
-type EventType = {
-  event: string;
-  newValue: Any;
-};
-
 export default function ClassDetail() {
     const { id } = useParams();
     const [activeTab, setActiveTab] = useState(0);
@@ -55,15 +50,15 @@ export default function ClassDetail() {
     const [rowsPerPage, setRowsPerPage] = React.useState(4);
 
 
-    const handleTabChange = ({event, newValue} : EventType) => {
+    const handleTabChange = (event: string, newValue : number) => {
         setActiveTab(newValue);
     };
 
-    const handleChangePage = (event, newPage) => {
+    const handleChangePage = (event: string, newPage : number) => {
         setPage(newPage);
     };
 
-    const handleChangeRowsPerPage = (event) => {
+    const handleChangeRowsPerPage = (event: { target: { value: string; }; }) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
@@ -168,7 +163,7 @@ export default function ClassDetail() {
                 component="div" 
                 count={students.length}
                 page={page}
-                onPageChange={handleChangePage}
+                onChange={handleChangePage}
                 rowsPerPage={rowsPerPage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
                 rowsPerPageOptions={[4, 10, 25]}
