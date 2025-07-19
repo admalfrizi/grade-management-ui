@@ -24,12 +24,13 @@ interface Student {
   subjects: Subject[];
 }
 
-interface ClassRoom {
+interface DataKelas {
   id: number;
   kdmk: string;
   nmMatkul: string;
   nmJurusan: string;
   semester: SemesterType;
+  ruangKls: string,
   thnAjar: number;
   jmlhBab: number;
   jmlhMhs: number

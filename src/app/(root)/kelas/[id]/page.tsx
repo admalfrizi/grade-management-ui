@@ -62,12 +62,11 @@ export default function ClassDetail() {
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { md: 'center' }, gap: 2, mb: 4 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <Avatar variant="rounded" sx={{ bgcolor: 'info.light', width: 64, height: 64 }}>
-                            {/* A custom Figma icon would go here */}
                             <Typography sx={{ color: 'info.main', fontWeight: 'bold' }}>UI</Typography>
                         </Avatar>
                         <Box>
                             <Typography variant="h4" component="h1" fontWeight="bold">{dtlClass?.nmMatkul}</Typography>
-                            <Typography color="text.secondary">Kode Kelas: {dtlClass?.kdmk} | Ruang 302</Typography>
+                            <Typography color="text.secondary">Kode Kelas: {dtlClass?.kdmk} | {dtlClass?.ruangKls}</Typography>
                         </Box>
                     </Box>
                 </Box>

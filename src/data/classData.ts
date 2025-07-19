@@ -17,13 +17,14 @@ export const scheduleClass: ScheduleClass[] = [
   }
 ]
 
-export const classes: ClassRoom[] = [
+export const classes: DataKelas[] = [
   {
     id: 1,
     nmMatkul: 'Algoritma Pemrograman',
     kdmk: "A11.37802",
     nmJurusan: "Teknik Informatika",
     semester: "Ganjil",
+    ruangKls: "Ruang H.7",
     thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 25
@@ -34,6 +35,7 @@ export const classes: ClassRoom[] = [
     nmMatkul: 'Basis Data',
     nmJurusan: "Teknik Informatika",
     semester: "Ganjil",
+    ruangKls: "Ruang H 3.10",
     thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 20
@@ -44,6 +46,7 @@ export const classes: ClassRoom[] = [
     nmMatkul: 'Basis Data',
     nmJurusan: "Teknik Informatika",
     semester: "Ganjil",
+    ruangKls: "Ruang H 4.8",
     thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 20

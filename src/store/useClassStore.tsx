@@ -3,14 +3,14 @@ import { classes } from "@/data/classData";
 import {create} from "zustand"
 
 interface ClassAction {
-    classData: ClassRoom[];
-    updateClassData: (id: number, updatedData: Partial<ClassRoom>) => void
+    classData: DataKelas[];
+    updateClassData: (id: number, updatedData: Partial<DataKelas>) => void
 }
  
 export const useClassStore = create<ClassAction>((set) => (
     {
         classData: classes,
-        updateClassData: (id: number, updatedData: Partial<ClassRoom>) => {
+        updateClassData: (id: number, updatedData: Partial<DataKelas>) => {
             set((state: { classData: any[] }) => ({
                 classData: state.classData.map((item) => item.id === id ? {...item, updatedData} : item)
             }))
