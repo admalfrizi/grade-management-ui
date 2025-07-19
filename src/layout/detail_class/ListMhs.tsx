@@ -48,7 +48,7 @@ function ListMhs({page, rowsPerPage, handleChangePage,handleChangeRowsPerPage } 
   return (
     <Paper elevation={0} sx={{ p: 3, borderRadius: 3, border: '1px solid', borderColor: 'divider' }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { md: 'center' }, mb: 2, gap: 2 }}>
-        <Typography variant="h6" fontWeight="bold">Daftar Mahasiswa (35)</Typography>
+        <Typography variant="h6" fontWeight="bold">Daftar Mahasiswa ({students.length})</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: { xs: '100%', md: 'auto' } }}>
             <TextField
             fullWidth
@@ -113,7 +113,7 @@ function ListMhs({page, rowsPerPage, handleChangePage,handleChangeRowsPerPage } 
             component="div" 
             count={students.length}
             page={page}
-            onPageChange={handleChangePage}
+            onChange={handleChangePage}
             rowsPerPage={rowsPerPage}
             onRowsPerPageChange={handleChangeRowsPerPage}
             rowsPerPageOptions={[4, 10, 25]}

@@ -1,4 +1,4 @@
-import { Avatar, Chip, IconButton, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import { Avatar, Button, Chip, Divider, IconButton, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -26,9 +26,10 @@ function MateriBab({id,dataKls,page,rowsPerPage,handleChangePage,handleChangeRow
       <Paper elevation={0} sx={{mt: 3, p: 3, borderRadius: 3, border: '1px solid', borderColor: 'divider' }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { md: 'center' }, mb: 2, gap: 2 }}>
             <Typography variant="h6"component="h1">Materi Bab</Typography>
-            <Typography variant="subtitle2" color="gray">
-                Total Jumlah : {dataKls?.listBab?.length}
-            </Typography>
+            <Button variant="contained" sx={{ textTransform: "none", borderRadius: 2 }}>
+                Tambahkan Bab Baru
+            </Button>
+           
         </Box>
         <TableContainer>
             <Table>
@@ -57,7 +58,10 @@ function MateriBab({id,dataKls,page,rowsPerPage,handleChangePage,handleChangeRow
                 </TableBody>
             </Table>
         </TableContainer>
-        
+        <Divider sx={{ mb: 2 }} />
+        <Typography variant="subtitle2" color="gray">
+            Total Jumlah : {dataKls?.listBab?.length}
+        </Typography>
       </Paper>
     </Box>
   )

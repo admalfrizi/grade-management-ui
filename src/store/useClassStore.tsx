@@ -11,7 +11,7 @@ export const useClassStore = create<ClassAction>((set) => (
     {
         classData: classes,
         updateClassData: (id: number, updatedData: Partial<DataKelas>) => {
-            set((state: { classData: any[] }) => ({
+            set((state) => ({
                 classData: state.classData.map((item) => item.id === id ? {...item, updatedData} : item)
             }))
         }

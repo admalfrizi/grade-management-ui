@@ -17,6 +17,30 @@ export const scheduleClass: ScheduleClass[] = [
   }
 ]
 
+export const tipeBobotNilai : InputBobotNilaiPerComponent[] = [
+  {
+    component: "Tugas",
+    vlBobotNilai: 0
+  },
+  {
+    component: "UTS",
+    vlBobotNilai: 0
+  },
+  {
+    component: "UAS",
+    vlBobotNilai: 0
+  },
+  {
+    component: "Proyek",
+    vlBobotNilai: 0
+  },
+  {
+    component: "Kuis",
+    vlBobotNilai: 0
+  }
+]
+
+
 export const classes: DataKelas[] = [
   {
     id: 1,
@@ -35,7 +59,26 @@ export const classes: DataKelas[] = [
         desc: "" ,
         bobotNilai: 0,
         componentScore: [
-
+          {
+            component: "Tugas",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UTS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UAS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Proyek",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Kuis",
+            vlBobotNilai: 0
+          }
         ]
       },
       {
@@ -44,7 +87,26 @@ export const classes: DataKelas[] = [
         desc: "" ,
         bobotNilai: 0,
         componentScore: [
-          
+          {
+            component: "Tugas",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UTS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UAS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Proyek",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Kuis",
+            vlBobotNilai: 0
+          }
         ]
       },
       {
@@ -53,7 +115,26 @@ export const classes: DataKelas[] = [
         desc: "" ,
         bobotNilai: 0,
         componentScore: [
-          
+          {
+            component: "Tugas",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UTS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UAS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Proyek",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Kuis",
+            vlBobotNilai: 0
+          }
         ]
       },
       {
@@ -62,7 +143,26 @@ export const classes: DataKelas[] = [
         desc: "" ,
         bobotNilai: 0,
         componentScore: [
-          
+         {
+          component: "Tugas",
+          vlBobotNilai: 0
+        },
+        {
+          component: "UTS",
+          vlBobotNilai: 0
+        },
+        {
+          component: "UAS",
+          vlBobotNilai: 0
+        },
+        {
+          component: "Proyek",
+          vlBobotNilai: 0
+        },
+        {
+          component: "Kuis",
+          vlBobotNilai: 0
+        }
         ]
       },
       {
@@ -71,7 +171,26 @@ export const classes: DataKelas[] = [
         desc: "" ,
         bobotNilai: 0,
         componentScore: [
-          
+          {
+            component: "Tugas",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UTS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "UAS",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Proyek",
+            vlBobotNilai: 0
+          },
+          {
+            component: "Kuis",
+            vlBobotNilai: 0
+          }
         ]
       }
     ]
@@ -99,4 +218,6 @@ export const classes: DataKelas[] = [
     jmlhMhs: 20
   }
 ];
+
+
 
