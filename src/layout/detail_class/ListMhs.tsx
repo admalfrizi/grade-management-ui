@@ -110,13 +110,13 @@ function ListMhs({page, rowsPerPage, handleChangePage,handleChangeRowsPerPage } 
         </Table>
         </TableContainer>
         <TablePagination
-        component="div" 
-        count={students.length}
-        page={page}
-        onChange={handleChangePage}
-        rowsPerPage={rowsPerPage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        rowsPerPageOptions={[4, 10, 25]}
+            component="div" 
+            count={students.length}
+            page={page}
+            onChange={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            rowsPerPageOptions={[4, 10, 25]}
         />
     </Paper>
   )

@@ -1,4 +1,5 @@
 type GradeComponent = 'Tugas' | 'UTS' | 'UAS' | 'Proyek' | 'Kuis';
+type SemesterType = 'Ganjil' | 'Genap';
 
 interface Grade {
   component: GradeComponent;
@@ -28,7 +29,8 @@ interface ClassRoom {
   kdmk: string;
   nmMatkul: string;
   nmJurusan: string;
-  semester: number;
+  semester: SemesterType;
+  thnAjar: number;
   jmlhBab: number;
   jmlhMhs: number
 }

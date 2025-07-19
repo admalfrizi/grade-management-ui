@@ -28,15 +28,16 @@ export default function ClassCard({id, nmKelas, jmlhMhs,nmJurusan, isConfigurabl
                 </Stack>
                     {
                         isConfigurable == true ? (
-                            <Link href={ROUTES.CLASS_SCORE_EDIT.route(id)}>
-                                <Stack
-                                    direction="row"
-                                    sx={{ justifyContent: 'space-between', gap: 1, mt: 3 }}
-                                >
-                                    <Button variant="outlined">Edit Nilai</Button>
-                                </Stack>
-                            </Link>
-                            
+                            <Stack
+                                direction="row"
+                                sx={{ justifyContent: 'space-between', gap: 1, mt: 3 }}
+                            >
+                                <Button variant="outlined" sx={{textTransform: 'none', textDecorationLine : "none"}}>
+                                    <Link href={ROUTES.CLASS_DETAIL.route(id)}>
+                                        Detail
+                                    </Link>
+                                </Button>
+                            </Stack> 
                         ) : null
                     }
             </CardContent>

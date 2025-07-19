@@ -70,34 +70,23 @@ export default function ClassDetail() {
                             <Typography color="text.secondary">Kode Kelas: {dtlClass?.kdmk} | Ruang 302</Typography>
                         </Box>
                     </Box>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                        <Button variant="outlined" color="secondary" startIcon={<SettingsIcon />} sx={{ textTransform: 'none' }}>Pengaturan</Button>
-                    </Box>
                 </Box>
             </header>
 
             {/* Tabs */}
             <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
-            <Tabs value={activeTab} onChange={handleTabChange} aria-label="class navigation tabs">
-                <StyledTab label="Mahasiswa" />
-                <StyledTab label="Pertemuan" />
-                <StyledTab label="Tugas & Penilaian" />
-                <StyledTab label="Materi Kelas" />
-            </Tabs>
+                <Tabs value={activeTab} onChange={handleTabChange} aria-label="class navigation tabs">
+                    <StyledTab label="Mahasiswa" />
+                    <StyledTab label="Pengaturan Nilai Kelas" />
+                </Tabs>
             </Box>
             {activeTab === 0 && (
                 <ListMhs page={page} rowsPerPage={rowsPerPage} handleChangePage={handleChangePage} handleChangeRowsPerPage={handleChangeRowsPerPage} />
             )}
 
             {activeTab === 1 && (
-                <Pertemuan/>
-            )}
-
-            {activeTab === 2 && (
                 <TugasPenilaian/>
             )}
-
-
       </Box>
     )
 }

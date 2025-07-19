@@ -58,7 +58,7 @@ export default function Breadcrumb({namePage} : BreadcrumbProps) {
   const routeName = getKeyFromRoute(namePage);
   const breadCrumbData = generateBreadcrumbs(namePage, routeName)
 
-  console.log("breadcrumb" + JSON.stringify(breadCrumbData))
+  //console.log("breadcrumb" + JSON.stringify(breadCrumbData))
 
   return (
     <StyledBreadcrumbs

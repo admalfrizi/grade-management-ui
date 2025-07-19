@@ -19,9 +19,5 @@ export const ROUTES: Record<string, RouteConfig> = {
     CLASS_DETAIL: {
         title : (nmKelas: string) => nmKelas,
         route : (id?: string) => `/kelas/${id}`
-    },
-    CLASS_SCORE_EDIT: {
-        title : "Konfigurasi Nilai",
-        route : (id?: string) => `/kelas/${id}/score` 
     }
 }

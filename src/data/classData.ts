@@ -23,7 +23,8 @@ export const classes: ClassRoom[] = [
     nmMatkul: 'Algoritma Pemrograman',
     kdmk: "A11.37802",
     nmJurusan: "Teknik Informatika",
-    semester: 5,
+    semester: "Ganjil",
+    thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 25
   },
@@ -32,7 +33,8 @@ export const classes: ClassRoom[] = [
     kdmk: "A11.37826",
     nmMatkul: 'Basis Data',
     nmJurusan: "Teknik Informatika",
-    semester: 7,
+    semester: "Ganjil",
+    thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 20
   },
@@ -41,7 +43,8 @@ export const classes: ClassRoom[] = [
     kdmk: "A11.37826",
     nmMatkul: 'Basis Data',
     nmJurusan: "Teknik Informatika",
-    semester: 7,
+    semester: "Ganjil",
+    thnAjar: 2025,
     jmlhBab: 6,
     jmlhMhs: 20
   }

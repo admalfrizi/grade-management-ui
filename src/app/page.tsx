@@ -54,24 +54,6 @@ export default function Home() {
           ))}
           
         </Grid>
-        <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-          Daftar Kelas yang Anda Ampu
-        </Typography>
-        <Grid
-          container
-          spacing={2}
-          sx={{ mb: (theme) => theme.spacing(2) }}
-        >
-          {classData.map((data, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}
-              >
-              <Link href={ROUTES.CLASS_DETAIL.route(data.id.toString())} style={{textDecoration: "none"}}>
-                <ClassCard nmKelas={data.nmMatkul} jmlhMhs={data.jmlhMhs} nmJurusan={data.nmJurusan} isConfigurable={false} />
-              </Link>
-            </Grid>
-          ))}
-        </Grid>
-        
         <Typography component="h2" variant="h6" sx={{ my: 2 }}>
           Jadwal Mengajar Anda untuk Hari Ini
         </Typography>
