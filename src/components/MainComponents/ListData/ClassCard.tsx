@@ -32,24 +32,25 @@ export default function ClassCard({id, nmKelas, jmlhMhs,nmJurusan, isConfigurabl
                                 direction="row"
                                 sx={{ justifyContent: 'space-between', gap: 1, mt: 3 }}
                             >
-                                <Button
-                                    variant="outlined"
-                                    className="transition-all duration-200 active:scale-95 hover:shadow-md"
-                                    sx={{
-                                        px: 2,
-                                        py: 1,
-                                        borderRadius: 2,
-                                        textTransform: "none",
-                                        fontSize: 12,
-                                        fontWeight: 500,
-                                    }}
-                                >
-                                    <Link href={ROUTES.CLASS_DETAIL.route(id)} style={{ textDecoration: 'none' }}>
-                                        <Typography variant="body2" sx={{color: '#052e08'}}>
+                                <Link href={ROUTES.CLASS_DETAIL.route(id)} style={{ textDecoration: 'none' }}>
+                                    <Button
+                                        variant="outlined"
+                                        className="transition-all duration-200 active:scale-95 hover:shadow-md"
+                                        sx={{
+                                            px: 2,
+                                            py: 1,
+                                            borderRadius: 2,
+                                            textTransform: "none",
+                                            fontSize: 12,
+                                            fontWeight: 500,
+                                            color: '#052E58'
+                                        }}
+                                    >
+                                        <Typography variant="body2">
                                             Detail
                                         </Typography>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </Stack> 
                         ) : null
                     }

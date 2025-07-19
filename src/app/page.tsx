@@ -52,16 +52,15 @@ export default function Home() {
               <StatCard {...card} />
             </Grid>
           ))}
-          
         </Grid>
-        <Typography component="h2" variant="h6" sx={{ my: 2 }}>
+        {/* <Typography component="h2" variant="h6" sx={{ my: 2 }}>
           Jadwal Mengajar Anda untuk Hari Ini
         </Typography>
         {
           scheduleClass.map((data, idx) => (
             <TeachCard {...data} />
           ))
-        }
+        } */}
 
       </Box>
     </div>
