@@ -21,16 +21,27 @@ export const classes: ClassRoom[] = [
   {
     id: 1,
     nmMatkul: 'Algoritma Pemrograman',
+    kdmk: "A11.37802",
     nmJurusan: "Teknik Informatika",
-    semester: 12,
+    semester: 5,
     jmlhBab: 6,
     jmlhMhs: 25
   },
   {
     id: 2,
+    kdmk: "A11.37826",
     nmMatkul: 'Basis Data',
     nmJurusan: "Teknik Informatika",
-    semester: 12,
+    semester: 7,
+    jmlhBab: 6,
+    jmlhMhs: 20
+  },
+  {
+    id: 3,
+    kdmk: "A11.37826",
+    nmMatkul: 'Basis Data',
+    nmJurusan: "Teknik Informatika",
+    semester: 7,
     jmlhBab: 6,
     jmlhMhs: 20
   }

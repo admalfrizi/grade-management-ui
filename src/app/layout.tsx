@@ -11,6 +11,7 @@ import HeaderPage from "@/components/Header/HeaderPage";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
+
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" className={roboto.variable}>
        <body>
@@ -45,7 +47,7 @@ export default function RootLayout({
                       mt: { xs: 12, md: 0 },
                     }}
                   >
-                  <HeaderPage />
+                  <HeaderPage/>
                   {children}
                 </Stack>
               </Box>

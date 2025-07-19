@@ -5,13 +5,16 @@ import React from 'react'
 import Breadcrumb from './BreadCrumb'
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import MenuIcon from '../MenuIcon';
+import { usePathname } from "next/navigation";
 
 interface Props {
-    namePage?: string
     searchVl?: string
 }
 
-function HeaderPage({ namePage, searchVl } : Props) {
+function HeaderPage({ searchVl } : Props) {
+
+  const pathName = usePathname()
+
   return (
     <Stack
       direction="row"
@@ -25,7 +28,7 @@ function HeaderPage({ namePage, searchVl } : Props) {
       }}
       spacing={2}
     >
-        <Breadcrumb />
+        <Breadcrumb namePage={pathName} />
         <MenuIcon showBadge aria-label="Open notifications">
           <NotificationsRoundedIcon />
         </MenuIcon>

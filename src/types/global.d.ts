@@ -25,6 +25,7 @@ interface Student {
 
 interface ClassRoom {
   id: number;
+  kdmk: string;
   nmMatkul: string;
   nmJurusan: string;
   semester: number;

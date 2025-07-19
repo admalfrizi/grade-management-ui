@@ -17,7 +17,7 @@ export default function MenuIcon({
       invisible={!showBadge}
       sx={{ [`& .${badgeClasses.badge}`]: { right: 2, top: 2 } }}
     >
-      <IconButton size="small" {...props} />
+      <IconButton size="medium" {...props} />
     </Badge>
   );
 }

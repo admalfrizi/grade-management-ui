@@ -10,6 +10,7 @@ import StatCard, { InfoCardProps } from "@/components/MainComponents/Charts/Stat
 import { classes, scheduleClass } from "@/data/classData";
 import Link from "next/link";
 import { ROUTES } from "@/lib/route";
+import { useClassStore } from "@/store/useClassStore";
 
 export const data: InfoCardProps[] = [
   {
@@ -32,6 +33,8 @@ export const data: InfoCardProps[] = [
 
 
 export default function Home() {
+  const { classData } = useClassStore();
+
   return (
     <div>
       <Box sx={{ width: '100%', maxWidth: { sm: '100%'} }}>
@@ -59,10 +62,11 @@ export default function Home() {
           spacing={2}
           sx={{ mb: (theme) => theme.spacing(2) }}
         >
-          {classes.map((data, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
-              <Link href={ROUTES.CLASS_DETAIL(data.id.toString())}>
-                <ClassCard nmKelas={data.nmMatkul} jmlhMhs={data.jmlhMhs} nmJurusan={data.nmJurusan} />
+          {classData.map((data, index) => (
+            <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}
+              >
+              <Link href={ROUTES.CLASS_DETAIL.route(data.id.toString())} style={{textDecoration: "none"}}>
+                <ClassCard nmKelas={data.nmMatkul} jmlhMhs={data.jmlhMhs} nmJurusan={data.nmJurusan} isConfigurable={false} />
               </Link>
             </Grid>
           ))}

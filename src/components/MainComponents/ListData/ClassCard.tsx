@@ -1,13 +1,17 @@
-import { CardContent, Stack, Typography } from "@mui/material";
+import { ROUTES } from "@/lib/route";
+import { Button, CardContent, Stack, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
+import Link from "next/link";
 
 export type ClassCardProps = {
+    id?: number
     nmKelas: string
     jmlhMhs: number
     nmJurusan: string
+    isConfigurable: boolean
 }
 
-export default function ClassCard({nmKelas, jmlhMhs,nmJurusan} : ClassCardProps) {
+export default function ClassCard({id, nmKelas, jmlhMhs,nmJurusan, isConfigurable = false} : ClassCardProps) {
     return (
         <Card variant="outlined" sx={{ height: '100%'}}>
             <CardContent>
@@ -22,6 +26,19 @@ export default function ClassCard({nmKelas, jmlhMhs,nmJurusan} : ClassCardProps)
                         {jmlhMhs} Mahasiswa
                     </Typography>
                 </Stack>
+                    {
+                        isConfigurable == true ? (
+                            <Link href={ROUTES.CLASS_SCORE_EDIT.route(id)}>
+                                <Stack
+                                    direction="row"
+                                    sx={{ justifyContent: 'space-between', gap: 1, mt: 3 }}
+                                >
+                                    <Button variant="outlined">Edit Nilai</Button>
+                                </Stack>
+                            </Link>
+                            
+                        ) : null
+                    }
             </CardContent>
         </Card>
     )
