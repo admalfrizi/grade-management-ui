@@ -113,7 +113,7 @@ function ListMhs({page, rowsPerPage, handleChangePage,handleChangeRowsPerPage } 
             component="div" 
             count={students.length}
             page={page}
-            onChange={handleChangePage}
+            onPageChange={handleChangePage}
             rowsPerPage={rowsPerPage}
             onRowsPerPageChange={handleChangeRowsPerPage}
             rowsPerPageOptions={[4, 10, 25]}

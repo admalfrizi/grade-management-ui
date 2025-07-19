@@ -26,8 +26,55 @@ export const classes: DataKelas[] = [
     semester: "Ganjil",
     ruangKls: "Ruang H.7",
     thnAjar: 2025,
-    jmlhBab: 6,
-    jmlhMhs: 25
+    jmlhBab: 5,
+    jmlhMhs: 25,
+    listBab: [
+      {
+        babId: 1,
+        title: "Dasar Algoritma pada Pemrograman",
+        desc: "" ,
+        bobotNilai: 0,
+        componentScore: [
+
+        ]
+      },
+      {
+        babId: 2,
+        title: "Fungsi dan Parameter Pemrograman",
+        desc: "" ,
+        bobotNilai: 0,
+        componentScore: [
+          
+        ]
+      },
+      {
+        babId: 3,
+        title: "Sequential Pemrograman",
+        desc: "" ,
+        bobotNilai: 0,
+        componentScore: [
+          
+        ]
+      },
+      {
+        babId: 4,
+        title: "Jenis - Jenis Algoritma",
+        desc: "" ,
+        bobotNilai: 0,
+        componentScore: [
+          
+        ]
+      },
+      {
+        babId: 5,
+        title: "fnfslefse",
+        desc: "" ,
+        bobotNilai: 0,
+        componentScore: [
+          
+        ]
+      }
+    ]
   },
   {
     id: 2,
@@ -52,3 +99,4 @@ export const classes: DataKelas[] = [
     jmlhMhs: 20
   }
 ];
+

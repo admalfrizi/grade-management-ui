@@ -20,38 +20,6 @@ type BreadcrumbProps = {
   namePage: string
 }
 
-// const getKeyFromRoute = (pathname: string): string | null => {
-//   for (const key of Object.keys(ROUTES)) {
-//     const routeConfig = ROUTES[key];
-//     if (typeof routeConfig.route === "string" && routeConfig.route === pathname) {
-//       return typeof routeConfig.title === "function"
-//         ? routeConfig.title("")
-//         : routeConfig.title;
-//     }
-//   }
-
-//   for (const key of Object.keys(ROUTES)) {
-//     const routeConfig = ROUTES[key];
-
-//     if (typeof routeConfig.route === "function") {
-//       const testPath = routeConfig.route("");
-//       if (pathname.startsWith(testPath)) {
-//         const param = pathname.slice(testPath.length);
-//         const isSingleSegment = !param.includes("/") && param.length > 0;
-
-//         if (isSingleSegment) {
-//           return typeof routeConfig.title === "function"
-//             ? routeConfig.title(param)
-//             : routeConfig.title;
-//         }
-//       }
-//     }
-//   }
-
-
-//   return null;
-// };
-
 export default function Breadcrumb({namePage} : BreadcrumbProps) {
   //const routeName = getKeyFromRoute(namePage);
   const breadCrumbData = generateBreadcrumbs(namePage)

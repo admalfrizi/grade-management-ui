@@ -14,8 +14,9 @@ import React, { useState } from "react";
 import { useClassStore } from "@/store/useClassStore";
 import ListMhs from "@/layout/detail_class/ListMhs";
 import SettingsIcon from '@mui/icons-material/Settings';
-import Pertemuan from "@/layout/detail_class/Pertemuan";
-import TugasPenilaian from "@/layout/detail_class/TugasPenilaian";
+import Pertemuan from "@/layout/detail_class/NilaiMahasiswa";
+import PengaturanNilai from "@/layout/detail_class/PengaturanNilai";
+import MateriBab from "@/layout/detail_class/MateriBab";
 // --- Mock Data ---
 
 // Custom styled Tab for active state
@@ -77,6 +78,8 @@ export default function ClassDetail() {
                 <Tabs value={activeTab} onChange={handleTabChange} aria-label="class navigation tabs">
                     <StyledTab label="Mahasiswa" />
                     <StyledTab label="Pengaturan Nilai Kelas" />
+                    <StyledTab label="Materi Bab" />
+                    <StyledTab label="Nilai Mahasiswa" />
                 </Tabs>
             </Box>
             {activeTab === 0 && (
@@ -84,8 +87,14 @@ export default function ClassDetail() {
             )}
 
             {activeTab === 1 && (
-                <TugasPenilaian/>
+                <PengaturanNilai id={id} dataKls={dtlClass} />
             )}
+
+            {activeTab === 2 && (
+                <MateriBab id={id} dataKls={dtlClass} page={page} rowsPerPage={rowsPerPage} handleChangePage={handleChangePage} handleChangeRowsPerPage={handleChangeRowsPerPage}/>
+            )
+
+            }
       </Box>
     )
 }

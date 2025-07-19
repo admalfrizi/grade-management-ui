@@ -1,20 +1,17 @@
 type GradeComponent = 'Tugas' | 'UTS' | 'UAS' | 'Proyek' | 'Kuis';
 type SemesterType = 'Ganjil' | 'Genap';
 
-interface Grade {
+interface InputBobotNilaiPerComponent {
   component: GradeComponent;
-  score: number;
+  vlBobotNilai?: number;
 }
 
 interface Chapter {
+  babId: number;
   title: string;
-  contribution: number;
-}
-
-interface Subject {
-  name: string;
-  chapters: Chapter[];
-  grades: Grade[];
+  desc: string;
+  bobotNilai?: number;
+  componentScore: InputBobotNilaiPerComponent[]
 }
 
 interface Student {
@@ -33,7 +30,8 @@ interface DataKelas {
   ruangKls: string,
   thnAjar: number;
   jmlhBab: number;
-  jmlhMhs: number
+  jmlhMhs: number;
+  listBab?: Chapter[];
 }
 
 interface ScheduleClass {
