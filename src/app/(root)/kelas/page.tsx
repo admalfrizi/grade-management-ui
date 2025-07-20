@@ -10,6 +10,8 @@ import React from 'react'
 
 function Kelas() {
   const {classData, updateClassData} = useClassStore();
+
+  console.log(classData)
   
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%'} }}>

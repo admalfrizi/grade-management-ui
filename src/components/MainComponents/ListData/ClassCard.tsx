@@ -15,7 +15,7 @@ export default function ClassCard({id, nmKelas, jmlhMhs,nmJurusan, isConfigurabl
     return (
         <Card variant="outlined" sx={{ height: '100%'}}>
             <CardContent>
-                <Typography component="h2" variant="h6" gutterBottom>
+                <Typography component="h2" variant="h6" noWrap={true} gutterBottom>
                     {nmKelas}
                 </Typography>
                 <Stack

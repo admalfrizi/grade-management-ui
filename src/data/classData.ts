@@ -208,8 +208,8 @@ export const classes: DataKelas[] = [
   },
   {
     id: 3,
-    kdmk: "A11.37826",
-    nmMatkul: 'Basis Data',
+    kdmk: "A11.37852",
+    nmMatkul: 'Interaksi Manusia dan Komputer',
     nmJurusan: "Teknik Informatika",
     semester: "Ganjil",
     ruangKls: "Ruang H 4.8",

@@ -4,7 +4,7 @@ import { Button, Card, Divider, Paper, Stack, TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { ParamValue } from 'next/dist/server/request/params';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useMemo, useState } from 'react'
 
 interface Props {
@@ -15,37 +15,38 @@ interface Props {
 function PengaturanNilai({id,dataKls}: Props) {
   const babComponents = useMemo(() => {
     return (
-      dataKls?.listBab?.map((data) => ({
+      dataKls?.listBab?.map((data: Chapter) => ({
         ...data,
       })) ?? []
     );
   }, [dataKls]);
-  const [components, setComponents] = useState(babComponents);
+  const [listBab, setListBab] = useState(babComponents);
   const { updateClassData } = useClassStore()
+  const router = useRouter();
 
-  console.log(components)
+  console.log(listBab)
 
   const handleWeightChange = (index: number, bobot: number) => {
-    const newData = [...components];
+    const newData = [...listBab];
     newData[index].bobotNilai = bobot;
-    setComponents(newData);
+    setListBab(newData);
   };
 
   const handleContributionChange = (compIdx: number, idx: number, value: number) => {
-    const newData = [...components];
+    const newData = [...listBab];
     newData[idx].componentScore[compIdx].vlBobotNilai = value;
-    setComponents(newData);
+    setListBab(newData);
   };
 
-  const getTotalBobot = () => components.reduce((acc, data) => acc + data.bobotNilai!!, 0);
-  const getTotalBobotKomponen = (compIdx: number) => components[compIdx].componentScore.reduce((acc, val) => acc + val.vlBobotNilai!!, 0);
+  const getTotalBobot = () => listBab.reduce((acc, data) => acc + data.bobotNilai!!, 0);
+  const getTotalBobotKomponen = (compIdx: number) => listBab[compIdx].componentScore.reduce((acc, val) => acc + val.vlBobotNilai!!, 0);
 
   const validateCheck = () => {
     const totalBobotValidate = getTotalBobot() == 100
-    const checkValid = components.every((data) => {
+    const checkValid = listBab.every((data) => {
       if(data.bobotNilai === 0) return true
 
-      return getTotalBobotKomponen(components.indexOf(data)) === 100
+      return getTotalBobotKomponen(listBab.indexOf(data)) === 100
     })
 
     return totalBobotValidate && checkValid
@@ -55,16 +56,17 @@ function PengaturanNilai({id,dataKls}: Props) {
     if(!dataKls) return
 
     updateClassData(dataKls.id, {
-        components,
-        configCompleted: validateCheck()
+        listBab: listBab,
     })
+
+    router.push("/kelas")
   }
 
   useEffect(() => {
     if(dataKls && dataKls.listBab?.length!! > 0){
-      setComponents(babComponents)
+      setListBab(babComponents)
     } 
-  })
+  }, [dataKls,babComponents])
 
   return (
     <Box className="space-y-5">
@@ -84,7 +86,7 @@ function PengaturanNilai({id,dataKls}: Props) {
           Daftar Bab
         </Typography>
         {
-          components?.map((data, idx) => (
+          listBab?.map((data, idx) => (
             <Box key={idx} sx={{ mb: 4 }}>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
@@ -156,7 +158,7 @@ function PengaturanNilai({id,dataKls}: Props) {
         <Divider sx={{ mb: 2 }} />
         <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: "space-between", alignItems: 'center'}}  >
           <Typography>Total Seluruh Bobot Nilai per Bab : {getTotalBobot()}%</Typography>
-          <Button variant="contained" sx={{ textTransform: "none", borderRadius: 2 }}>
+          <Button onClick={storeConfig} variant="contained" sx={{ textTransform: "none", borderRadius: 2 }}>
             Simpan Rumus Nilai
           </Button>
         </Box>
