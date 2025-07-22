@@ -10,7 +10,7 @@ interface Chapter {
   babId: number;
   title: string;
   desc: string;
-  bobotNilai?: number;
+  bobotNilai: number;
   componentScore: InputBobotNilaiPerComponent[]
 }
 

@@ -24,7 +24,7 @@ function PengaturanNilai({id,dataKls}: Props) {
   const { updateClassData } = useClassStore()
   const router = useRouter();
 
-  console.log(listBab)
+  //console.log(listBab)
 
   const handleWeightChange = (index: number, bobot: number) => {
     const newData = [...listBab];

@@ -57,16 +57,13 @@ export default function TopBar() {
           direction="row"
           sx={{
             alignItems: 'center',
-            flexGrow: 1,
-            
             width: '100%',
-            gap: 1,
+            justifyContent: 'space-between'
           }}
         >
           <Stack
             direction="row"
-            spacing={1}
-            sx={{ justifyContent: 'center', mr: 'auto',alignItems: 'center', }}
+            sx={{ justifyContent: 'space-between', mr: 'auto',alignItems: 'center', }}
           >
             <Image src="/images/logo_udinus.png" width={70} height={70} alt='icon'/>
             <Box sx={{ mr: 'auto' }}>
@@ -79,12 +76,10 @@ export default function TopBar() {
             </Box>
           </Stack>
           {/* <ColorModeIconDropdown /> */}
-          <MenuIcon aria-label="menu" onClick={toggleDrawer(true)}>
-            <MenuRoundedIcon />
-          </MenuIcon>
-          <SideBarMobile open={open} toggleDrawer={toggleDrawer} />
+          <Image onClick={toggleDrawer(true)} style={{marginRight: 30, cursor: 'pointer'}} src="/images/mobile_menu_ic.svg" height={20} width={20} alt='icon'/>
         </Stack>
       </Toolbar>
+      <SideBarMobile open={open} toggleDrawer={toggleDrawer} />
     </AppBar>
   );
 }

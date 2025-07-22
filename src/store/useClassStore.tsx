@@ -4,7 +4,7 @@ import {create} from "zustand"
 
 interface ClassAction {
     classData: DataKelas[];
-    updateClassData: (id: number, updatedData: Partial<DataKelas>) => void
+    updateClassData: (id: number, listBab: Partial<DataKelas>) => void
 }
  
 export const useClassStore = create<ClassAction>((set) => (
@@ -12,7 +12,7 @@ export const useClassStore = create<ClassAction>((set) => (
         classData: classes,
         updateClassData: (id: number, updatedData: Partial<DataKelas>) => {
             set((state) => ({
-                classData: state.classData.map((item) => item.id === id ? {...item, updatedData} : item)
+                classData: state.classData.map((item) => item.id === id ? {...item, ...updatedData} : item)
             }))
         }
     }
