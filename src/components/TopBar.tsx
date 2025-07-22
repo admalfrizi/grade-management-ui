@@ -52,7 +52,7 @@ export default function TopBar() {
         top: 'var(--template-frame-height, 0px)',
       }}
     >
-      <Toolbar variant="regular">
+      <Toolbar variant="dense">
         <Stack
           direction="row"
           sx={{
@@ -63,7 +63,7 @@ export default function TopBar() {
         >
           <Stack
             direction="row"
-            sx={{ justifyContent: 'space-between', mr: 'auto',alignItems: 'center', }}
+            sx={{ justifyContent: 'space-between', mr: 'auto',alignItems: 'center', gap: 1 }}
           >
             <Image src="/images/logo_udinus.png" width={70} height={70} alt='icon'/>
             <Box sx={{ mr: 'auto' }}>
