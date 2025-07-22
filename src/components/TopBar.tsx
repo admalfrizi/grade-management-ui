@@ -44,6 +44,7 @@ export default function TopBar() {
       position="fixed"
       sx={{
         display: { xs: 'auto', md: 'none' },
+        paddingInline: 2,
         boxShadow: 0,
         bgcolor: "#052E58",
         backgroundImage: 'none',
@@ -52,7 +53,7 @@ export default function TopBar() {
         top: 'var(--template-frame-height, 0px)',
       }}
     >
-      <Toolbar variant="dense">
+      <Toolbar variant="dense" disableGutters>
         <Stack
           direction="row"
           sx={{
@@ -76,7 +77,7 @@ export default function TopBar() {
             </Box>
           </Stack>
           {/* <ColorModeIconDropdown /> */}
-          <Image onClick={toggleDrawer(true)} style={{marginRight: 30, cursor: 'pointer'}} src="/images/mobile_menu_ic.svg" height={20} width={20} alt='icon'/>
+          <Image onClick={toggleDrawer(true)} style={{marginRight: 20, cursor: 'pointer'}} src="/images/mobile_menu_ic.svg" height={20} width={20} alt='icon'/>
         </Stack>
       </Toolbar>
       <SideBarMobile open={open} toggleDrawer={toggleDrawer} />
