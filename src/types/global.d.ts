@@ -11,7 +11,6 @@ interface Chapter {
   title: string;
   desc: string;
   bobotNilai: number;
-  componentScore: InputBobotNilaiPerComponent[]
 }
 
 interface Student {
@@ -31,6 +30,7 @@ interface DataKelas {
   thnAjar: number;
   jmlhBab: number;
   jmlhMhs: number;
+  component: InputBobotNilaiPerComponent[]
   listBab?: Chapter[];
 }
 

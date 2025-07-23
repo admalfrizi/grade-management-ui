@@ -17,6 +17,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Pertemuan from "@/layout/detail_class/NilaiMahasiswa";
 import PengaturanNilai from "@/layout/detail_class/PengaturanNilai";
 import MateriBab from "@/layout/detail_class/MateriBab";
+import { getInitials } from "@/lib/utils";
 // --- Mock Data ---
 
 // Custom styled Tab for active state
@@ -63,7 +64,7 @@ export default function ClassDetail() {
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { md: 'center' }, gap: 2, mb: 4 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <Avatar variant="rounded" sx={{ bgcolor: 'info.light', width: 64, height: 64 }}>
-                            <Typography sx={{ color: 'info.main', fontWeight: 'bold' }}>UI</Typography>
+                            <Typography sx={{ color: 'white', fontWeight: 'bold' }}>{getInitials(dtlClass?.nmMatkul)}</Typography>
                         </Avatar>
                         <Box>
                             <Typography variant="h4" component="h1" fontWeight="bold">{dtlClass?.nmMatkul}</Typography>

@@ -20,7 +20,16 @@ function PengaturanNilai({id,dataKls}: Props) {
       })) ?? []
     );
   }, [dataKls]);
+  const components = useMemo(() => {
+    return (
+      dataKls?.component?.map((data: InputBobotNilaiPerComponent) => ({
+        ...data,
+      })) ?? []
+    );
+  }, [dataKls?.component]);
+
   const [listBab, setListBab] = useState(babComponents);
+  const [component, setComponents] = useState(components)
   const { updateClassData } = useClassStore()
   const router = useRouter();
 
@@ -32,25 +41,25 @@ function PengaturanNilai({id,dataKls}: Props) {
     setListBab(newData);
   };
 
-  const handleContributionChange = (compIdx: number, idx: number, value: number) => {
-    const newData = [...listBab];
-    newData[idx].componentScore[compIdx].vlBobotNilai = value;
-    setListBab(newData);
+  const handleContributionChange = (idx: number, value: number) => {
+    const newData = [...component];
+    newData[idx].vlBobotNilai = value;
+    setComponents(newData);
   };
 
   const getTotalBobot = () => listBab.reduce((acc, data) => acc + data.bobotNilai!!, 0);
-  const getTotalBobotKomponen = (compIdx: number) => listBab[compIdx].componentScore.reduce((acc, val) => acc + val.vlBobotNilai!!, 0);
+  //const getTotalBobotKomponen = (compIdx: number) => component[compIdx].vlBobotNilai?.reduce((acc, val) => acc + val.vlBobotNilai!!, 0);
 
-  const validateCheck = () => {
-    const totalBobotValidate = getTotalBobot() == 100
-    const checkValid = listBab.every((data) => {
-      if(data.bobotNilai === 0) return true
+  // const validateCheck = () => {
+  //   const totalBobotValidate = getTotalBobot() == 100
+  //   const checkValid = listBab.every((data) => {
+  //     if(data.bobotNilai === 0) return true
 
-      return getTotalBobotKomponen(listBab.indexOf(data)) === 100
-    })
+  //     return getTotalBobotKomponen(listBab.indexOf(data)) === 100
+  //   })
 
-    return totalBobotValidate && checkValid
-  }
+  //   return totalBobotValidate && checkValid
+  // }
 
   const storeConfig = () => {
     if(!dataKls) return
@@ -65,8 +74,9 @@ function PengaturanNilai({id,dataKls}: Props) {
   useEffect(() => {
     if(dataKls && dataKls.listBab?.length!! > 0){
       setListBab(babComponents)
+      setComponents(components)
     } 
-  }, [dataKls,babComponents])
+  }, [dataKls,babComponents, components])
 
   return (
     <Box className="space-y-5">
@@ -83,11 +93,63 @@ function PengaturanNilai({id,dataKls}: Props) {
         elevation={0} sx={{mt: 3, p: 3, borderRadius: 3, border: '1px solid', borderColor: 'divider' }}
       >
         <Typography variant="h6" gutterBottom>
+          Konfigurasi Per Komponen
+        </Typography>
+        <Divider />
+        <Stack sx={{gap: 3, mb: 3, flex: "display", flexDirection: {xs : "column", md: "row"}}}>
+        {
+          component.map((vl, idx) => (
+            <Box key={idx} sx={{ p: 2, mt: 3, border: "1px solid #eee", borderRadius: 2, backgroundColor: "#fafafa" }}>
+              <Typography variant="body2" sx={{ mb: 1 }}>
+                {vl.component}
+              </Typography>
+              <Stack direction="row" sx={{justifyContent: "space-between", gap: 2, alignItems: 'center'}}>
+                <TextField
+                  size="small"
+                  type="number"
+                  sx={{
+                    bgcolor: "white"
+                  }}
+                  fullWidth
+                  value={vl.vlBobotNilai}
+                  onChange={(e) => {
+                    const newVal: string = e.target.value;
+                    handleContributionChange(idx, newVal === "" ? 0 : parseInt(newVal));
+                  }}
+                  //error={getContribTotal(i) !== 100}
+                  //helperText={val < 0 || val > 100 ? "Nilai harus antara 0–100" : ""}
+                  //disabled={comp.weight === 0}
+                />
+                <Typography>
+                  %
+                </Typography>
+              </Stack>
+              
+            </Box>
+          ))
+        }
+        </Stack>
+        <Box sx={{ p: 2, mt: { xs: 0, md: 3}, color: 'white', border: "1px solid #eee", borderRadius: 2, backgroundColor: "#1e40ae" }}>
+          <Stack direction="row" sx={{justifyContent: "space-between", alignItems: 'center'}}>
+            <Typography variant="body2">
+              Total Bobot Nilai Semua Komponen  
+            </Typography>
+            <Typography variant="subtitle2">
+              {/* {getTotalBobotKomponen(idx)} %   */}
+            </Typography>
+          </Stack>
+        </Box>
+        
+      </Paper>
+      <Paper 
+        elevation={0} sx={{mt: 3, p: 3, borderRadius: 3, border: '1px solid', borderColor: 'divider' }}
+      >
+        <Typography variant="h6" gutterBottom>
           Daftar Bab
         </Typography>
         {
           listBab?.map((data, idx) => (
-            <Box key={idx} sx={{ mb: 4 }}>
+            <Box key={idx}>
               <Divider sx={{ mb: 2 }} />
               <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
                 Bab {data.babId} - {data.title}
@@ -109,7 +171,7 @@ function PengaturanNilai({id,dataKls}: Props) {
                 />
               </Stack>
               <Stack sx={{gap: 3, mb: 3, flex: "display", flexDirection: {xs : "column", md: "row"}}}>
-                {
+                {/* {
                   data.componentScore.map((valComp, compIdx) => 
                     (<Box key={compIdx} sx={{ p: 2, mt: 3, border: "1px solid #eee", borderRadius: 2, backgroundColor: "#fafafa" }}>
                       <Typography variant="body2" sx={{ mb: 1 }}>
@@ -139,19 +201,10 @@ function PengaturanNilai({id,dataKls}: Props) {
                       
                     </Box>)
                   )
-                }
+                } */}
                 
               </Stack>
-              <Box sx={{ p: 2, mt: { xs: 0, md: 3}, color: 'white', border: "1px solid #eee", borderRadius: 2, backgroundColor: "#1e40ae" }}>
-                <Stack direction="row" sx={{justifyContent: "space-between", alignItems: 'center'}}>
-                  <Typography variant="body2">
-                    Total Bobot Nilai Semua Komponen  
-                  </Typography>
-                  <Typography variant="subtitle2">
-                    {getTotalBobotKomponen(idx)} %  
-                  </Typography>
-                </Stack>
-              </Box>
+              
             </Box>
           ))
         }
@@ -169,3 +222,4 @@ function PengaturanNilai({id,dataKls}: Props) {
 }
 
 export default PengaturanNilai
+
